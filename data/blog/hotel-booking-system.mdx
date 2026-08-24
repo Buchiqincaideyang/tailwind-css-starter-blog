@@ -1,0 +1,39 @@
+---
+title: '酒店在线预订系统 —— 全栈项目实践'
+date: '2026-08-24'
+lastmod: '2026-08-24'
+tags: ['fullstack', 'nestjs', 'react', 'postgresql', 'prisma']
+draft: false
+summary: '一个完整的全栈酒店预订系统：NestJS 后端 + React 前端 + Prisma/PostgreSQL，支持三级权限、在线预订与库存管理，已部署上线。'
+---
+
+## 项目简介
+
+这是一个完整的酒店在线预订系统，实现了从房间浏览、在线下单到后台管理的完整业务流程。系统内置用户、前台、管理员三级权限，覆盖房型管理、房间库存、订单流转等核心模块。
+
+在线体验：[https://hotel-booking.pocketbay.app](https://hotel-booking.pocketbay.app)
+
+## 技术栈
+
+- **后端**：NestJS 11 + TypeScript + Express
+- **前端**：React 18 + Vite + Ant Design 5 + React Router + Zustand + Axios
+- **数据库**：Prisma 6 ORM + PostgreSQL
+- **认证**：JWT 双 Token（access token 2 小时 + refresh token 7 天）
+- **缓存**：Redis（ioredis），支持内存降级
+
+## 核心功能
+
+- **房型管理**：4 种房型，支持周末价格上浮 20%
+- **房间与库存**：27 间房、30 天库存，自动生成
+- **在线预订**：用户浏览房型 → 选择日期 → 下单支付
+- **订单管理**：下单 → 支付 → 确认 → 完成/取消的完整流转
+- **订单超时自动取消**：定时任务检测超时未支付订单并自动取消
+- **三级权限（RBAC）**：用户 / 前台 / 管理员
+
+## 架构说明
+
+系统采用前后端分离架构，前端由 Vite 构建后托管在后端服务中统一对外提供。后端按业务模块划分（房型、房间、订单、认证、用户等），通过 Prisma ORM 访问 PostgreSQL 数据库，认证采用 JWT 双 Token 机制，配合 Redis 缓存提升性能。
+
+## 总结
+
+通过这个项目，我完整实践了全栈开发流程：从需求分析、数据库设计、接口开发，到前端页面实现和最终的部署上线。这也是我迈向全栈工程师的重要一步。

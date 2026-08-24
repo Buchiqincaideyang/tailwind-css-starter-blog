@@ -7,20 +7,11 @@ interface Project {
 
 const projectsData: Project[] = [
   {
-    title: 'A Search Engine',
-    description: `What if you could look up any information in the world? Webpages, images, videos
-    and more. Google has many features to help you find exactly what you're looking
-    for.`,
-    imgSrc: '/static/images/google.png',
-    href: 'https://www.google.com',
-  },
-  {
-    title: 'The Time Machine',
-    description: `Imagine being able to travel back in time or to the future. Simple turn the knob
-    to the desired date and press "Go". No more worrying about lost keys or
-    forgotten headphones with this simple yet affordable solution.`,
-    imgSrc: '/static/images/time-machine.jpg',
-    href: '/blog/the-time-machine',
+    title: '酒店在线预订系统',
+    description: `全栈酒店预订系统：支持房型/房间/库存管理、在线下单支付与订单管理，
+    内置用户/前台/管理员三级权限，订单超时自动取消。
+    技术栈：NestJS + React + Ant Design + Prisma + PostgreSQL。`,
+    href: 'https://hotel-booking.pocketbay.app',
   },
 ]
 
